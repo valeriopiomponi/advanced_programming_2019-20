@@ -1,0 +1,24 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<string>
+#include<sstream>
+
+
+int main() {
+
+  
+  
+  std::vector<double> v;
+  std::string line;
+
+
+  v.push_back(n);
+
+
+  // std::sort( v.begin(), v.end() );
+
+  for (auto i = 0u; i < v.size(); i++) {
+    std::cout << v[i] << std::endl;
+  }
+}

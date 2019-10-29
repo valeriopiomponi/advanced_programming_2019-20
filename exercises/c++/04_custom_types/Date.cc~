@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+
+enum class month{jan, feb, mar, apr, may, jui, jul, aug, sep, oct, nov, dec};
+
+class date {
+
+  int _d;
+  month _m;
+  int _y;
+
+  public:
+  date(const int d,const month  m ,const int y)
+    :
+    _d{d},
+    _m{m},
+    _y{y}
+  {}
+ 
+  
+  int day(const int _d) {
+
+    return _d;
+  }
+
+  int fmonth(const int _m) {
+
+    return _m;
+  }
+
+  int year(const int _y) {
+
+    return _y;
+  }
+
+
+};
+
+
+using namespace std;
+
+int main(){
+
+  month mon{month::jan};
+
+  date pd{5, mon, 2000};
+  //cout << pd.day(7)<< endl;
+
+}

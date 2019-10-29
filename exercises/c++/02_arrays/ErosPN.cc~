@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+
+
+
+int main() {
+
+  int sqN;
+  
+  std::cout<<"enter N\n";
+  std::size_t N;
+  std::cin>> N;
+
+  sqN = sqrt(N);
+
+  bool* Primes{new bool[N]};
+
+
+  for(std::size_t i{0}; i<N; i++) {
+    bool[i] = 1;
+  }
+    
+
+
+  
+
+  
+
+
+
+}
