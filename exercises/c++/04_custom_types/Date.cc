@@ -23,7 +23,7 @@ class date {
     return _d;
   }
 
-  int fmonth(const int _m) {
+  month fmonth(const month _m) {
 
     return _m;
   }
@@ -35,26 +35,39 @@ class date {
 
   void add_days(const unsigned int n) {
 
-    int d, y;
-    month m;
-
-    d = _d;
-    m = _m;
-    y = _y;
+    
     
     for(auto i{0}; i<n; i++){
 
-      add_day(d);
+      add_day();
     }
   }
 
   void add_day(){
-    int d, y;
-    month m;
+    
 
-    d=_d;
-    m = _m;
-    y = _y;
+    switch(_m){
+    case _m==month::jan: case _m==month::mar: case _m==month::may: case _m==month::jul: case _m==month::aug: case _m==month::oct: case _m==month::dec:
+      if(d < 31){
+	_d += 1;
+      }
+
+      else if(_m =! month::dec) {
+	_d = 1;
+	_m = _m(int(_m) +1));
+      }
+
+      else {
+	_d = 1;
+	_m = month::jan;
+	_y =+ 1;
+      }
+    }
+	
+	  
+    
+
+    
     
 
 };
@@ -70,6 +83,6 @@ int main(){
 
   pd.add_days(5);
 
-  cout<< pd._d<< endl;
+  cout<< pd._d << endl;
 
 }
