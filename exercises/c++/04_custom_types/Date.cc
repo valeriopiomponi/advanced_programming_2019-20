@@ -18,17 +18,17 @@ class date {
   {}
  
   
-  int day() {
+  int day() const{
 
     return _d;
   }
 
-  month fmonth() {
+  month fmonth() const{
 
     return _m;
   }
 
-  int year() {
+  int year() const{
 
     return _y;
   }
@@ -83,6 +83,14 @@ class date {
 };
 
 
+bool operator==(const date& lhs, const date& rhs){if(lhs.day()==rhs.day() && lhs.fmonth()==rhs.fmonth() && lhs.year()==rhs.year()){return true;}
+  else {return false;}};
+
+std::ostream& operator<<(std::ostream& os, const date& d){
+  os << "dd/mm/year:"<< d.day() << "/"<< int(d.fmonth()) << "/"<< d.year();
+  return os;
+};
+
 using namespace std;
 
 int main(){
@@ -92,6 +100,14 @@ int main(){
   date pd{1, mon, 2000};
 
   pd.add_days(367);
+
+  date pe{1, mon, 1999};
+
+  pe.add_days(734);
+
+  if(pe==pd){
+    cout<<"daje"<<endl;
+  }
 
   cout << pd.day()<< "-" << int(pd.fmonth())<< "-"<< pd.year() << endl;
 
