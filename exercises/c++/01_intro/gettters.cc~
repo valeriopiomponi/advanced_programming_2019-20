@@ -1,0 +1,25 @@
+#include<iostream>
+
+
+
+void get_int() {
+
+  int x;
+ 
+
+  std::cout << "enter an int" << std::endl;
+
+  while (!(std::cin >> x)) {
+    std::cout << "input is not an integer" << std::endl;
+
+  }
+    
+}
+
+
+
+int main () {
+
+  get_int();
+
+}
