@@ -13,9 +13,8 @@ int main() {
 
   i = 0;
   
-  while (j<100){
-    while(primes[i] < j) {
-
+  while (primes[i] < j){
+  
       if(primes[i] == 0) {
 	primes[i] = j;
 	std::cout<<j<<std::endl;
@@ -30,7 +29,10 @@ int main() {
 
       else {
 	i += 1;
-      }
+      
+	if (j>100)
+	  break;
+    
     }
     
    
