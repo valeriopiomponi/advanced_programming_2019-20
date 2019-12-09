@@ -63,6 +63,7 @@ and ignore what just read
 ```
 std::cin.ignore();
 ```
+ls
 
 ## Units of measure
 
