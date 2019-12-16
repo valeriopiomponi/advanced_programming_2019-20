@@ -1,0 +1,21 @@
+#include <iostream>
+#include <sstream>
+
+
+int main() {
+
+  std::vector<std::string> words;
+  int i{1};
+  std::string l1;
+
+  std::getline(std::cin, l1);
+  words[0] = l1; 
+  for(std::string line; std::getline(std::cin, line);){
+    words[i] = line;
+    i++;
+    std::cout << words[i-1] << std::endl;
+  }
+
+
+
+}

@@ -3,7 +3,11 @@
 #include<algorithm>
 #include<string>
 #include<sstream>
+#include<fstream>
 
+double fMed(const std::vector<double>& v){
+  return v[v.size()/2];
+}
 
 double fAve(const std::vector<double>& v){
   double Ave{0};
@@ -13,12 +17,12 @@ double fAve(const std::vector<double>& v){
   return Ave;
 }
 
-double fMed(const std::vector<double>& v, double Ave){
-  double Med{0};
+double fStd(const std::vector<double>& v, double Ave){
+  double Std{0};
   for(const auto& x :v)
-    Med += ((x-Ave)*(x-Ave));
-  Med /= v.size();
-  return Med;
+    Std += ((x-Ave)*(x-Ave));
+  Std /= v.size();
+  return Std;
 }
 
 
@@ -26,11 +30,13 @@ double fMed(const std::vector<double>& v, double Ave){
 int main() {
 
   
-  double n, Med, Ave;
+  double n, Med, Ave, Std;
   std::vector<double> v;
   std::string line;
 
-  while(std::getline(std::cin, line)){
+  std::ifstream fin("temperatures.txt");
+
+  while(std::getline(fin, line)){
     {
     std::istringstream is{line};
     is >> n;
@@ -47,7 +53,9 @@ int main() {
      }
 
      Ave = fAve(v);
-     Med = fMed(v, Ave);
+     Std = fStd(v, Ave);
+     Med = fMed(v);
+     
 
-     std::cout<<"Average temperature: " << Ave << "+ o - " << Med<<std::endl;
+     std::cout<<"Average temperature: " << Ave << " +- " << Std<< ", The Median is: " << Med << std::endl;
 }

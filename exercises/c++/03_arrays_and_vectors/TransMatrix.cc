@@ -59,11 +59,11 @@ int main(int argc, char* argv[]) {
 
   
   
-  for(std::size_t l{0}; l<rows; l++) {
+  for(std::size_t l{0}; l<cols; l++) {
     
-    for(std::size_t m{0}; m<cols; m++) {
+    for(std::size_t m{0}; m<rows; m++) {
       
-      std::cout<< ad[l*cols + m];
+      std::cout<< ad[l*rows + m];
       
     }
     std::cout<<"\n";
